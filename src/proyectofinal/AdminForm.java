@@ -56,6 +56,7 @@ public class AdminForm extends javax.swing.JFrame {
         btnBuscarNombre = new javax.swing.JButton();
         btnBuscarId = new javax.swing.JButton();
         btnListarTodos = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         cajeros = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -125,6 +126,8 @@ public class AdminForm extends javax.swing.JFrame {
         btnListarTodos.setText("Listar Todos");
         btnListarTodos.addActionListener(this::btnListarTodosActionPerformed);
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout clientesLayout = new javax.swing.GroupLayout(clientes);
         clientes.setLayout(clientesLayout);
         clientesLayout.setHorizontalGroup(
@@ -186,11 +189,13 @@ public class AdminForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clientesLayout.createSequentialGroup()
-                                .addComponent(btnListarTodos)
-                                .addGap(114, 114, 114))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clientesLayout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clientesLayout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(100, 100, 100)
+                                .addComponent(btnListarTodos)
+                                .addGap(114, 114, 114))))))
         );
         clientesLayout.setVerticalGroup(
             clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,9 +247,14 @@ public class AdminForm extends javax.swing.JFrame {
                             .addComponent(btnEditar)))
                     .addGroup(clientesLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnListarTodos)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                        .addGroup(clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(clientesLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnListarTodos))
+                            .addGroup(clientesLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(jButton1)))))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Clientes", clientes);
@@ -396,6 +406,7 @@ public class AdminForm extends javax.swing.JFrame {
     private javax.swing.JPanel cajeros;
     private javax.swing.JLabel ciudad;
     private javax.swing.JPanel clientes;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
