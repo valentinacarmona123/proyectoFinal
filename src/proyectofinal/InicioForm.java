@@ -9,7 +9,7 @@ package proyectofinal;
  * @author valen2201
  */
 public class InicioForm extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InicioForm.class.getName());
 
     /**
@@ -17,6 +17,7 @@ public class InicioForm extends javax.swing.JFrame {
      */
     public InicioForm() {
         initComponents();
+        
     }
 
     /**
@@ -55,17 +56,12 @@ public class InicioForm extends javax.swing.JFrame {
         btnCajero.addActionListener(this::btnCajeroActionPerformed);
 
         btnAdmin.setText("Entrar a Administrador");
+        btnAdmin.addActionListener(this::btnAdminActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(flecha)
-                .addGap(143, 143, 143)
-                .addComponent(flecha2)
-                .addGap(123, 123, 123))
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(btnCajero)
@@ -78,20 +74,27 @@ public class InicioForm extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addComponent(entrar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Titulo)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(subtitulo)))))
+                        .addGap(123, 123, 123)
+                        .addComponent(subtitulo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(flecha)
+                        .addGap(143, 143, 143)
+                        .addComponent(flecha2)
+                        .addGap(123, 123, 123))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Titulo)
+                        .addGap(102, 102, 102))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(21, 21, 21)
                 .addComponent(Titulo)
-                .addGap(1, 1, 1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(subtitulo)
                 .addGap(18, 18, 18)
                 .addComponent(entrar)
@@ -111,7 +114,20 @@ public class InicioForm extends javax.swing.JFrame {
 
     private void btnCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCajeroActionPerformed
         // TODO add your handling code here:
+        // Abre la ventana del cajero automático
+        CajeroForm cajeroVentana = new CajeroForm();
+        cajeroVentana.setVisible(true);
+        this.dispose(); // Cierra la ventana de inicio actual
+
     }//GEN-LAST:event_btnCajeroActionPerformed
+
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
+        // TODO add your handling code here:
+        // Abre la ventana del panel de administración
+        AdminForm adminVentana = new AdminForm();
+        adminVentana.setVisible(true);
+        this.dispose(); // Cierra la ventana de inicio actual
+    }//GEN-LAST:event_btnAdminActionPerformed
 
     /**
      * @param args the command line arguments
